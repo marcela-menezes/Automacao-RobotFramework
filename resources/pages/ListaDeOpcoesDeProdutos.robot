@@ -32,7 +32,7 @@ clicar no produto
 
   
 *** Test Cases ***    
-Criar usuario com sucesso
+Realizar compa
     Dado que estaja logado no site
     acessar o menu de compra    women
     visualizar lista de produtos da categoria

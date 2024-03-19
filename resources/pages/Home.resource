@@ -6,8 +6,6 @@ Resource    ../Base.resource
 Documentation    Tela 1: Tela home do site. 
 
 *** Variables ***
-${BROWSER}             chrome  
-${URL_SITE}            http://www.automationpractice.pl/index.php
 ${HOME_TITLE_SITE}          My Shop  
 ${HOME_MENU_LOGIN}          class: login
 
@@ -20,7 +18,7 @@ ${HOME_TXT_MENU_T-SHIRTS}                             T-SHIRTS
 
 *** Keywords ***
 Acessar site
-    Open Browser                                   browser=${BROWSER}           
+    Open Browser                                   browser=${BROWSER}        
     Maximize Browser Window
     Go To                                                  ${URL_SITE}
     Title Should Be                                        ${HOME_TITLE_SITE}
@@ -49,5 +47,5 @@ Acessar o menu de compra
 
 
 Dado que acesso a tela de login do site    
-    acessar site
-    acessar tela de login
+    Acessar site
+    Acessar tela de login

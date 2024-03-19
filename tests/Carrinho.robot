@@ -5,7 +5,7 @@ Test Teardown           Print
 
 
 *** Test Cases ***    
-Cebnario: Escolher um produto
+Cenario: Escolher um produto
     acessar site
     acessar o menu de compra    women
     Visualizar lista de produtos da categoria do menu escolhido 

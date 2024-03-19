@@ -14,8 +14,8 @@ Cenário 1: Criação de conta com sucesso
     Validar campo de email                                         ok
     Clicar em "Create an account"
     Cadastrar as informações pessoais
-    Conferir se o cadastro foi efetuado com sucesso                Your account has been created.
-    deverá direcionar para a página minha conta do site
+    Visualizar alert de cadastro efetuado com sucesso              Your account has been created.
+    Deverá direcionar para a página minha conta do site  
 
  Cenário 2: Criação de conta com email invalido
     [Tags]    ERRO  
