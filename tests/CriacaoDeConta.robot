@@ -10,7 +10,7 @@ Test Teardown           Print
 Cenário 1: Criação de conta com sucesso
     [Tags]    SUCESSO 
     Dado que acesso a tela de login do site
-    Casdastrar um novo e-mail                                      luiz@gmail.com
+    Casdastrar um novo e-mail                                      anaclara@gmail.com
     Validar campo de email                                         ok
     Clicar em "Create an account"
     Cadastrar as informações pessoais

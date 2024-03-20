@@ -22,5 +22,5 @@ jobs:
 
       - name: Executar os testes
         run: |
-          robot -d ./logs -i ERRO tests/CriacaoDeConta.robot
+          robot tests/CriacaoDeConta.robot
                 
