@@ -22,7 +22,7 @@ ${ICON_HOME}                                     xpath:  //a[@title='Home']
 
 *** Keywords ***
 
-gttyytrrtyuVisualizar alert de cadastro efetuado com sucesso   
+Visualizar alert de cadastro efetuado com sucesso   
     [Arguments]        ${txt_alert_account_created _success}
     Wait Until Element Is Visible           ${ALERT_ACCOUNT_CREATED _SUCCESS}                                   
     Element Text Should Be                  ${ALERT_ACCOUNT_CREATED _SUCCESS}         ${txt_alert_account_created _success} 
