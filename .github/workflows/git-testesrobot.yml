@@ -1,0 +1,26 @@
+name: Execultando teste da papiline
+on: [push]
+
+jobs: 
+  Web-Teste:
+    runs-on: ubuntu-20.04
+    name: instando o sistema operacional
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Instalar o python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"  
+
+      - name: Instalação do Robot
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade robotframework-seleniumlibrary  
+
+      - name: Executar os testes
+        run: |
+          robot -d ./logs -i ERRO tests/CriacaoDeConta.robot
+                
