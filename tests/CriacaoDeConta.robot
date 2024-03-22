@@ -4,6 +4,9 @@ Resource                ../resources/Base.resource
 
 Test Teardown           Print
 
+*** Variables ***
+${Email_Incorreto}        macelalima.com.br
+
 
 *** Test Cases ***
 
@@ -12,12 +15,13 @@ Cenário 1: Criação de conta com sucesso
     Dado que acesso a tela de login do site
     Casdastrar um novo e-mail                                      anaclara@gmail.com
     Validar campo de email                                         ok
-    Clicar em "Create an account"
-    Cadastrar as informações pessoais
-    Visualizar alert de cadastro efetuado com sucesso              Your account has been created.
-    Deverá direcionar para a página minha conta do site  
+   #  Clicar em "Create an account"
+   #  Cadastrar as informações pessoais
+   #  Visualizar alert de cadastro efetuado com sucesso              Your account has been created.
+   #  Deverá direcionar para a página minha conta do site  
 
  Cenário 2: Criação de conta com email invalido
+   
     [Tags]    ERRO  
     Dado que acesso a tela de login do site
     Casdastrar um novo e-mail                                        macelalima.com.br

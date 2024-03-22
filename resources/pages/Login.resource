@@ -2,7 +2,7 @@
 *** Settings ***
 
 Resource    ../Base.resource
-
+Library    FakerLibrary    locale=pt_BR
 
 Documentation    Tela 2: Tela de autenticação de Login.
 
@@ -34,15 +34,27 @@ Relaizar login
     Input Text                                  ${LOGIN_INPUT_EMAIL}                         ${txt_email}
     Input Password                              ${LOGIN_INPUT_PASSWORD}                      ${txt_password}
     Click Button                                ${LOGIN_BTN_SINGNING}   
+# Casdastrar um novo e-mail 
+#     [Arguments]        ${txt_email}
+#     Validar titulo da tela login                
+#     Element Should Be Visible                   ${LOGIN_ELEMENT_H3_CREATE_AN_ACCOUNT}                                 
+#     Input Text                                  ${LOGIN_INPUT_EMAIL_CREATE}                  ${txt_email}
+#     Set test Variable                           ${login_email-create}                        ${txt_email}
+#     Press Keys                                  ${LOGIN_INPUT_EMAIL_CREATE}                  TAB
+#     # Print
+
 Casdastrar um novo e-mail 
     [Arguments]        ${txt_email}
     Validar titulo da tela login                
-    Element Should Be Visible                   ${LOGIN_ELEMENT_H3_CREATE_AN_ACCOUNT}                                 
-    Input Text                                  ${LOGIN_INPUT_EMAIL_CREATE}                  ${txt_email}
-    Set test Variable                           ${login_email-create}                        ${txt_email}
+    Element Should Be Visible                   ${LOGIN_ELEMENT_H3_CREATE_AN_ACCOUNT} 
+  
+    ${txt_email}        FakerLibrary.Email
+    Input Text                ${LOGIN_INPUT_EMAIL_CREATE}                  ${txt_email}   
+    Set test Variable                           ${login_email-create}                        ${txt_email}    
     Press Keys                                  ${LOGIN_INPUT_EMAIL_CREATE}                  TAB
     # Print
-            
+    Log To Console       ---- ${txt_email}     
+     
 Clicar em "Create an account"
     Click Button                                ${LOGIN_BTN_CREATE_ACCOUNT}
 
