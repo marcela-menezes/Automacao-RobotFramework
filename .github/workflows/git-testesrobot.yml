@@ -29,7 +29,7 @@ jobs:
 
       - name: Executar os testes
         run: |
-          robot tests/CriacaoDeConta.robot
+          robot -d ./logs tests/CriacaoDeConta.robot
 
       - name: Exportando relatório
         if: always()
