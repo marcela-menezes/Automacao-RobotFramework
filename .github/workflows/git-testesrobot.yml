@@ -35,7 +35,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v3
         with: 
-          name: Resultados dos testes
+          name: result-tests
           path: ./logs
           if-no-files-found: ignore     
           retention-days: 4
@@ -44,12 +44,12 @@ jobs:
         if: always()
         uses: actions/download-artifact@v1
         with: 
-          name: Resultados dos testes          
+          name: result-tests         
 
       - name: Status Report dos testes
         if: always()
         uses: joonvena/robotframework-reporter-action@v2
         with: 
-          report_path: Resultados dos testes
+          report_path: result-tests
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-          show_passed_tests: true   
+          show_passed_tests: false   
