@@ -30,4 +30,11 @@ jobs:
       - name: Executar os testes
         run: |
           robot tests/CriacaoDeConta.robot
-                
+
+      - name: Exportando relatório
+        if: always()
+        uses: actions/upload-artifact@v3
+        with: 
+          name: Resultados dos testes
+          path: ./logs
+          if-no-files-found: ignore          
