@@ -2,10 +2,12 @@ name: Execultando teste da papiline
 on: [push]
 
 jobs: 
-  Web-Teste:
+  Web-Teste: 
     runs-on: ubuntu-20.04
+    permissions: write-all
     name: instando o sistema operacional
 
+    # "Checkout" cria uma clone dos arquivos no repositório
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,7 +27,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
 
-
       - name: Executar os testes
         run: |
           robot -d ./logs tests/CriacaoDeConta.robot
@@ -36,4 +37,19 @@ jobs:
         with: 
           name: Resultados dos testes
           path: ./logs
-          if-no-files-found: ignore          
+          if-no-files-found: ignore     
+          retention-days: 4
+
+      - name: Download do relatório de testes
+        if: always()
+        uses: actions/download-artifact@v1
+        with: 
+          name: Resultados dos testes          
+
+      - name: Status Report dos testes
+        if: always()
+        uses: joonvena/robotframework-reporter-action@v2
+        with: 
+          report_path: Resultados dos testes
+          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+          show_passed_tests: true   
