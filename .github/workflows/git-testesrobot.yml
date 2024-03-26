@@ -4,9 +4,8 @@ on: [push]
 jobs: 
   Web-Teste: 
     runs-on: ubuntu-20.04
-    permissions: write-all
     name: instando o sistema operacional
-
+    permissions: write-all
     # "Checkout" cria uma clone dos arquivos no repositório
     steps:
       - name: Checkout
@@ -46,10 +45,10 @@ jobs:
         with: 
           name: result-tests         
 
-      - name: Status Report dos testes
+      - name: Send Report
         if: always()
-        uses: joonvena/robotframework-reporter-action@v2
+        uses: joonvena/robotframework-reporter-action@v2.3
         with: 
           report_path: result-tests
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-          # show_passed_tests: false   
+          show_passed_tests: false   
