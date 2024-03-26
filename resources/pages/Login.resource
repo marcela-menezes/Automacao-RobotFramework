@@ -47,8 +47,6 @@ Casdastrar um novo e-mail
     [Arguments]        ${txt_email}
     Validar titulo da tela login                
     Element Should Be Visible                   ${LOGIN_ELEMENT_H3_CREATE_AN_ACCOUNT} 
-  
-    ${txt_email}        FakerLibrary.Email
     Input Text                ${LOGIN_INPUT_EMAIL_CREATE}                  ${txt_email}   
     Set test Variable                           ${login_email-create}                        ${txt_email}    
     Press Keys                                  ${LOGIN_INPUT_EMAIL_CREATE}                  TAB

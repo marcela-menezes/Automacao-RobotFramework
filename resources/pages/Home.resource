@@ -18,7 +18,7 @@ ${HOME_TXT_MENU_T-SHIRTS}                             T-SHIRTS
 
 *** Keywords ***
 Acessar site
-    Open Browser                                   browser=${BROWSER}        
+    Open Browser                                  browser=${BROWSER}      
     Maximize Browser Window
     Go To                                                  ${URL_SITE}
     Title Should Be                                        ${HOME_TITLE_SITE}
