@@ -4,6 +4,7 @@ Resource                ../resources/Base.resource
 
 Test Teardown           Print
 
+
 *** Test Cases ***
 
 Cenário 1: Criação de conta com sucesso
@@ -11,7 +12,7 @@ Cenário 1: Criação de conta com sucesso
     ${txt_email}        FakerLibrary.Email
 
     Dado que acesso a tela de login do site
-    Casdastrar um novo e-mail                                      ${txt_email}
+    Casdastrar um novo e-mail                                      ${txt_email}             #anaclara@gmail.com
     Validar campo de email                                         ok
     Clicar em "Create an account"
     Cadastrar as informações pessoais

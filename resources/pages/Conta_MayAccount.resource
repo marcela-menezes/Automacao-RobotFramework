@@ -25,21 +25,21 @@ ${ICON_HOME}                                     xpath:  //a[@title='Home']
 Visualizar alert de cadastro efetuado com sucesso   
     [Arguments]        ${txt_alert_account_created _success}
     Wait Until Element Is Visible           ${ALERT_ACCOUNT_CREATED _SUCCESS}                                   
-    Element Text Should Be                  ${ALERT_ACCOUNT_CREATED _SUCCESS}         ${txt_alert_account_created _success} 
+    SeleniumLibrary.Element Text Should Be                  ${ALERT_ACCOUNT_CREATED _SUCCESS}         ${txt_alert_account_created _success} 
 
 Validar tela principal my accout
     Wait Until Element Is Visible                   ${ELEMENT_H1_MAY_ACCOUNT}       
     Title Should Be                                 ${TITLE_MAY_ACCOUNT}
-    Element Should Be Visible                       ${ELEMENT_H1_MAY_ACCOUNT}      
+    SeleniumLibrary.Element Should Be Visible                       ${ELEMENT_H1_MAY_ACCOUNT}      
     # Print
-    Element Text Should Be                          ${CUSTOMER_NAME}       ${TXT_FIRST_NAME} ${TXT_LAST_NAME}  
+    SeleniumLibrary.Element Text Should Be                          ${CUSTOMER_NAME}       ${TXT_FIRST_NAME} ${TXT_LAST_NAME}  
     Scroll Element Into View                        ${ICON_HOME}
     # Print
     
 Validar submenus de gerenciamento de infomações da conta
     FOR    ${element}    IN    @{MENUS_MAY_ACCOUNT}   
         ${menus}    Replace String                  ${ELEMENT_MENU_MAY_ACCOUT}     %param%    ${element}
-        Element Should Be Visible                   ${menus} 
+        SeleniumLibrary.Element Should Be Visible                   ${menus} 
     END
 
 Deverá direcionar para a página minha conta do site  

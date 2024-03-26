@@ -25,7 +25,7 @@ Dado que estaja logado no site
 visualizar lista de produtos da categoria
   Wait Until Element Is Visible    class: cat-name 
   ${aux}    Catenate  ${Home_Menu_Escolhido}${SPACE}
-  Element Text Should Be           class: cat-name          ${aux}
+  SeleniumLibrary.Element Text Should Be           class: cat-name          ${aux}
 
 clicar no produto  
   Click Element                  xpath: //img[@title='Blouse']

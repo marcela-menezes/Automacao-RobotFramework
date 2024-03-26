@@ -46,7 +46,7 @@ Relaizar login
 Casdastrar um novo e-mail 
     [Arguments]        ${txt_email}
     Validar titulo da tela login                
-    Element Should Be Visible                   ${LOGIN_ELEMENT_H3_CREATE_AN_ACCOUNT} 
+    SeleniumLibrary.Element Should Be Visible                   ${LOGIN_ELEMENT_H3_CREATE_AN_ACCOUNT} 
     Input Text                ${LOGIN_INPUT_EMAIL_CREATE}                  ${txt_email}   
     Set test Variable                           ${login_email-create}                        ${txt_email}    
     Press Keys                                  ${LOGIN_INPUT_EMAIL_CREATE}                  TAB
@@ -58,13 +58,13 @@ Clicar em "Create an account"
 
 Validar campo de email
     [Arguments]        ${status}
-    Element Should Be Visible                   ${LOGIN_ELEMENT_VALIDATION_FIELD_EMAIl}${status}     
+    SeleniumLibrary.Element Should Be Visible                   ${LOGIN_ELEMENT_VALIDATION_FIELD_EMAIl}${status}     
 
 Validar mensagem de erro no e-mail cadastrado
 # mensagem de erro ao inserir email já registrado
     [Arguments]        ${txt_alert_erro_email}
     Wait Until Element Is Visible               ${LOGIN_ELEMENT_ALERT_CREATE_ACCOUNT_ERRO}
-    Element Text Should Be                      ${LOGIN_ELEMENT_ALERT_CREATE_ACCOUNT_ERRO}        ${txt_alert_erro_email}
+    SeleniumLibrary.Element Text Should Be                      ${LOGIN_ELEMENT_ALERT_CREATE_ACCOUNT_ERRO}        ${txt_alert_erro_email}
     # Print    
 
 

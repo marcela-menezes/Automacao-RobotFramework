@@ -18,7 +18,7 @@ ${CATEGORIA_PRODUCT_BLOUSE}             xpath: //img[@title='Blouse']
 Visualizar lista de produtos da categoria do menu escolhido
   Wait Until Element Is Visible    ${CATEGORIA_H1_CATEGORY_PRODUCT}  
   ${aux}    Catenate  ${Home_Menu_Escolhido}${SPACE}
-  Element Text Should Be           ${CATEGORIA_H1_CATEGORY_PRODUCT}          ${aux}
+  SeleniumLibrary.Element Text Should Be           ${CATEGORIA_H1_CATEGORY_PRODUCT}          ${aux}
 
 Escolher um produto  
   Click Element                  ${CATEGORIA_PRODUCT_BLOUSE}
