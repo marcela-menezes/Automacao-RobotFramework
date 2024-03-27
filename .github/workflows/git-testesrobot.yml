@@ -28,13 +28,13 @@ jobs:
 
       - name: Executar os testes
         run: |
-          robot -d ./logs -i ERRO tests/CriacaoDeConta.robot
+          robot -d ./logs  -v BROWSER:headlesschrome  tests/CriacaoDeConta.robot
 
       - name: Exportando relatório
         if: always()
         uses: actions/upload-artifact@v3
         with: 
-          name: result-tests
+          name: result-tests-chrome
           path: ./logs
           if-no-files-found: ignore     
           retention-days: 4
@@ -43,12 +43,12 @@ jobs:
         if: always()
         uses: actions/download-artifact@v1
         with: 
-          name: result-tests         
+          name: result-tests-chrome         
 
       - name: Send Report
         if: always()
         uses: joonvena/robotframework-reporter-action@v2.4
         with: 
-          report_path: result-tests
+          report_path: result-tests-chrome
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
           #show_passed_tests: false   
