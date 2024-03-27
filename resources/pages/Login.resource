@@ -16,7 +16,7 @@ ${LOGIN_BTN_CREATE_ACCOUNT}                        id: SubmitCreate
 
 #Login do usuario
 ${LOGIN_ELEMENT_H3_ALREADY_REGISTERED}            xpath: //h3[contains(.,'Already registered?')]
-${LOGIN_INPUT_EMAIL}                              id: emaill
+${LOGIN_INPUT_EMAIL}                              id: email
 ${LOGIN_INPUT_PASSWORD}                           id: passwd
 ${LOGIN_BTN_SINGNING}                             id: SubmitLogin
 
