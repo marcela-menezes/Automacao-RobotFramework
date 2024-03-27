@@ -21,7 +21,7 @@ Cenário 1: Criação de conta com sucesso
     [Tags]    ERRO  
 
     Dado que acesso a tela de login do site
-    Casdastrar um novo e-mail                                        macelalima@gmail.com.br
+    Casdastrar um novo e-mail                                        macelalima.com.br
     Validar campo de email                                           error
     Clicar em "Create an account"
     Validar mensagem de erro no e-mail cadastrado                    Invalid email address.
