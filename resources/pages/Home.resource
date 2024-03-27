@@ -9,6 +9,7 @@ Documentation    Tela 1: Tela home do site.
 ${HOME_TITLE_SITE}          My Shop  
 ${HOME_MENU_LOGIN}          class: login
 
+# Campos dos menus do site
 ${HOME_MENU_WOMEN}                                    xpath:  //a[@title='Women']
 ${HOME_MENU_DRESSES}                                  xpath: (//a[@title='Dresses'])[2]
 ${HOME_MENU_T-SHIRTS}                                 xpath: (//a[@title='T-shirts'])[2]

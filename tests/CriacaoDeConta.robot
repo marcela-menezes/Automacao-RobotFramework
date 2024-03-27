@@ -1,9 +1,7 @@
 *** Settings ***
 Resource                ../resources/Base.resource
 
-
 Test Teardown           Print
-
 
 *** Test Cases ***
 
@@ -20,8 +18,8 @@ Cenário 1: Criação de conta com sucesso
     Deverá direcionar para a página minha conta do site  
 
  Cenário 2: Criação de conta com email invalido
-   
     [Tags]    ERRO  
+
     Dado que acesso a tela de login do site
     Casdastrar um novo e-mail                                        macelalima.com.br
     Validar campo de email                                           error
@@ -30,6 +28,7 @@ Cenário 1: Criação de conta com sucesso
 
  Cenário 3: Criação de conta com email já registrado
     [Tags]    ERRO       
+
     Dado que acesso a tela de login do site
     Casdastrar um novo e-mail                                        marcela@gmail.com
     Validar campo de email                                           ok
