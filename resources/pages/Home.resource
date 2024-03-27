@@ -6,8 +6,8 @@ Resource    ../Base.resource
 Documentation    Tela 1: Tela home do site. 
 
 *** Variables ***
-${HOME_TITLE_SITE}          My Shop  
-${HOME_MENU_LOGIN}          class: login
+${HOME_TITLE_SITE}                                   My Shop 
+${HOME_MENU_LOGIN}                                   class: login
 
 # Campos dos menus do site
 ${HOME_MENU_WOMEN}                                    xpath:  //a[@title='Women']
